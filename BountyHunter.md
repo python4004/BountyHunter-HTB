@@ -107,11 +107,10 @@ $testuser = "test";
 
 ```
 
-we got db user name and password actually i don't know what should i do with this credential so i decided to take brake and watch movie.....
+we got db user name and password actually i don't know what should i do with this credential so i decided to take break and watch movie.....
 
-`SSH` maybe lets try i thout that this password maybe for `ssh` no another thing to do so lets list all users we got it from `etc/passwd` file and login 
+ **`SSH` is opened !!**  --->>> lets try,i thought that this password may be for `ssh` no another thing to do so lets list all users we got it from `etc/passwd` file and login. 
 
-**acullay we can use tools like `hydra` to bruteforce user ** but i make it manually HOW!!
 
 ```
 root:x:0:0:root:/root:/bin/bash
@@ -148,12 +147,15 @@ systemd-coredump:x:999:999:systemd Core Dumper:/:/usr/sbin/nologin
 development:x:1000:1000:Development:/home/development:/bin/bash
 lxd:x:998:100::/var/snap/lxd/common/lxd:/bin/false
 usbmux:x:112:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
-``` 
-we can check users that have password on machine or Take a look at the uncommon users of Linux  but i recommend it when in small scop why!! not to make firewall if there to detect you ,accully i dont like bruteforce it my last choice 
 
-#### Note that An  **x**   character indicates that encrypted password is stored in /etc/shadow file like `root:x:`
+```
+**acullay we can use tools like `hydra` to bruteforce user** but i make it manually HOW!!
 
-notic `development` user 
+we can check users that have password on machine or Take a look at the uncommon users of Linux, but i recommend it when in small scope why!! not to make firewall if there to detect you ,accully i dont like bruteforce it my last choice 
+
+#### (Note that An  **x**   character indicates that encrypted password is stored in /etc/shadow file like `root:x:`)
+
+notice `development` user 
 #### 3- SSH 
 ![screen11](https://user-images.githubusercontent.com/36403473/137606008-3e515acb-4ed8-454b-8308-333149468173.png)
 
