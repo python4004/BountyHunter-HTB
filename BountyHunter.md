@@ -161,10 +161,76 @@ notice `development` user
 
 ## `ROOT acess` 
 
+first lets check what this user can do so i used `sudo -l` command 
+
+![screen16](https://user-images.githubusercontent.com/36403473/138506691-a3e3812b-67e9-45d0-80bb-78900b4cc3b6.png)
 
 
+ this user can run this `/opt/skytrain_inc/ticketValidator.py` file so lets see what  this file do 
+
+```
+#Skytrain Inc Ticket Validation System 0.1
+#Do not distribute this file.
+
+def load_file(loc):
+    if loc.endswith(".md"):
+        return open(loc, 'r')
+    else:
+        print("Wrong file type.")
+        exit()
+
+def evaluate(ticketFile):
+    #Evaluates a ticket to check for ireggularities.
+    code_line = None
+    for i,x in enumerate(ticketFile.readlines()):
+        if i == 0:
+            if not x.startswith("# Skytrain Inc"):
+                return False
+            continue
+        if i == 1:
+            if not x.startswith("## Ticket to "):
+                return False
+            print(f"Destination: {' '.join(x.strip().split(' ')[3:])}")
+            continue
+
+        if x.startswith("__Ticket Code:__"):
+            code_line = i+1
+            continue
+
+        if code_line and i == code_line:
+            if not x.startswith("**"):
+                return False
+            ticketCode = x.replace("**", "").split("+")[0]
+            if int(ticketCode) % 7 == 4:
+                validationNumber = eval(x.replace("**", ""))
+                if validationNumber > 100:
+                    return True
+                else:
+                    return False
+    return False
+
+def main():
+    fileName = input("Please enter the path to the ticket file.\n")
+    ticket = load_file(fileName)
+    #DEBUG print(ticket)
+    result = evaluate(ticket)
+    if (result):
+        print("Valid ticket.")
+    else:
+        print("Invalid ticket.")
+    ticket.close
+
+main()
+```
+Okey after analysis this file this file check about ticket is valid or not 
+
+**important notes about this python code :**
+
+1-ticket file should have `md` extention. 
+
+2- **eval()**-->> way to excute malicious code but first we should pass filters.
+
+on exploring this server i found folder that have sample of **invalid** tickets in `/opt/skytrain_inc/`
 
 
-
- 
 
