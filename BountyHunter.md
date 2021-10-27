@@ -232,5 +232,18 @@ Okey after analysis this file this file check about ticket is valid or not
 
 on exploring this server i found folder that have sample of **invalid** tickets in `/opt/skytrain_inc/`
 
+so i downloaded this code and created test.md file to check the valid format of ticket.
+
+**valid format steps**
+
+1-first line  starts with `# Skytrain Inc`.
+
+2-second line starts with`## Ticket to`.
+
+3-third line starts with `__Ticket Code:__`
+
+4-`Line 29` it checks if the fourth line is in or not ,if the line exist should starts with `**` and  the script removes the `**`
+
+so in the forth line we can excute code 
 
 
